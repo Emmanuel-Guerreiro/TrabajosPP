@@ -1,4 +1,4 @@
-##Solucion de TPs correspondientes a la materia de Paradigmas de la Programación
+## Solucion de TPs correspondientes a la materia de Paradigmas de la Programación ##
 
 Autor: Guerreiro Emmanuel - 47262
 
