@@ -2,13 +2,14 @@ package Miembros;
 
 import java.util.ArrayList;
 
+import Asignaturas.Curso;
 import Asignaturas.Inscripcion;
 
 public class Estudiante extends Persona {
     private int legajo;
-    private ArrayList<Inscripcion> inscripto;
+    private ArrayList<Inscripcion> inscripto = new ArrayList<Inscripcion>();
 
-    Estudiante(String name, int l) {
+    public Estudiante(String name, int l) {
         super(name);
         this.legajo = l;
     }
@@ -19,5 +20,15 @@ public class Estudiante extends Persona {
     public void inscribir(Curso c) {
         Inscripcion ins = new Inscripcion(this, c);
         inscripto.add(ins);
+    }
+
+    public int getLegajo() {
+        return legajo;
+    }
+
+    public void cursosInscriptos() {
+        for (Inscripcion i : inscripto) {
+            System.out.println(i.getCurso());
+        }
     }
 }

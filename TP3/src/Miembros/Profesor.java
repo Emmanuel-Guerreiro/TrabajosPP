@@ -13,9 +13,7 @@ public class Profesor extends Persona {
         this.curso = c;
     }
 
-    public void getCurso() {
-        // todo: Formatear respuesta, si no va a mostrar
-        // dir de memoria
-        System.out.println(curso);
+    public void showCurso() {
+        System.out.println(curso.getTitulo());
     }
 }
