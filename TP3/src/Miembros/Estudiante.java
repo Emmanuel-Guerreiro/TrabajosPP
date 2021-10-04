@@ -3,6 +3,7 @@ package Miembros;
 import java.util.ArrayList;
 
 import Asignaturas.Curso;
+import Asignaturas.ErrorInscripcion;
 import Asignaturas.Inscripcion;
 
 public class Estudiante extends Persona {
@@ -17,7 +18,7 @@ public class Estudiante extends Persona {
     // Recibe un objeto curso y genera una nueva clase de
     // tipo inscripcion. De paso esa inscripcion la sumo
     // al array de inscripciones
-    public void inscribir(Curso c) {
+    public void inscribir(Curso c) throws ErrorInscripcion {
         Inscripcion ins = new Inscripcion(this, c);
         inscripto.add(ins);
     }
@@ -30,5 +31,13 @@ public class Estudiante extends Persona {
         for (Inscripcion i : inscripto) {
             System.out.println(i.getCurso());
         }
+    }
+
+    public int getNInscripciones() {
+        return inscripto.size();
+    }
+
+    public String getName() {
+        return this.nombre;
     }
 }

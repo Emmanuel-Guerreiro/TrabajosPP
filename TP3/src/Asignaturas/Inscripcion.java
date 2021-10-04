@@ -6,19 +6,21 @@ public class Inscripcion {
     private Curso paraEl;
     private Estudiante estudiante;
 
+    public Inscripcion(Estudiante e, Curso c) throws ErrorInscripcion {
+        if (e.getNInscripciones() > 3) {
+            throw new ErrorInscripcion("El alumno " + e.getName() + " supera la cantidad max de inscripciones");
+        }
+        this.paraEl = c;
+        this.estudiante = e;
+        c.put(e.getLegajo(), this);
+    }
+
     public static boolean estaInscripto(int legajo, Curso c) {
-        String xd = c.get(legajo);
-        if (xd != null) {
+        Inscripcion estaIns = c.get(legajo);
+        if (estaIns != null) {
             return true;
         }
         return false;
-    }
-
-    public Inscripcion(Estudiante e, Curso c) {
-        this.paraEl = c;
-        this.estudiante = e;
-        c.put(e.getLegajo(), c.getTitulo());
-        c.addInscripto(this);
     }
 
     public Curso getCurso() {

@@ -3,7 +3,7 @@ package Asignaturas;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class Curso extends Hashtable<Integer, String> {
+public class Curso extends Hashtable<Integer, Inscripcion> {
     private String titulo;
     private ArrayList<Inscripcion> inscrpciones = new ArrayList<Inscripcion>();
 
@@ -13,10 +13,6 @@ public class Curso extends Hashtable<Integer, String> {
 
     public ArrayList<Inscripcion> inscriptos() {
         return inscrpciones;
-    }
-
-    public void addInscripto(Inscripcion i) {
-        inscrpciones.add(i);
     }
 
     public String getTitulo() {
